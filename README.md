@@ -22,4 +22,6 @@ $> python api.py
 
 ### 2013-02
 
-My game plan is to stub out the data
+My game plan is to stub out the data, then take a peek at what the data
+contract(s) should be. Also, here be dragons. I'm learning Flask. I swear I'll
+try not to break anything. :)
