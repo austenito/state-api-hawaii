@@ -8,11 +8,13 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 
+from utilities.converters import RegexConverter
+
 PROJECT_ROOT = os.path.normpath(os.path.realpath(os.path.dirname(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
 app = Flask(__name__)
-
+app.url_map.converters['regex'] = RegexConverter
 
 @app.errorhandler(404)
 def not_found(error=None):
