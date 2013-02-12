@@ -19,3 +19,8 @@ sample size slice.)
 ## Endpoints
 
 populations/<year>/<county>
+
+# Other pieces of data
+
+ * prices
+ * education
