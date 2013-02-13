@@ -10,11 +10,17 @@ based off of [DBEDT's](http://hawaii.gov/dbedt/info/economic/databook/) data.
 
 ## Getting started
 
+### Running the server
+
 ``` 
 $> workon <your magical env here>
 $> pip install requirements.txt 
 $> python api.py
 ```
+
+### Testing the api
+
+``` curl localhost:5000/population/2012/hawaii ```
 
 **win**
 
