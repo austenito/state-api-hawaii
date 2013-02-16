@@ -10,23 +10,35 @@ based off of [DBEDT's](http://hawaii.gov/dbedt/info/economic/databook/) data.
 
 ## Getting started
 
-### Running the server
+### Running the API server
 
 ``` 
 $> workon <your magical env here>
 $> pip install requirements.txt 
 $> python api.py
 ```
-
-### Testing the api
+#### Testing the api
 
 ``` curl localhost:5000/population/2012/hawaii ```
 
 **win**
 
+### Running the www server
+
+``` 
+$> workon <your magical env here>
+$> pip install requirements.txt 
+$> bower install
+$> python www.py
+```
+
 ## Updates
 
-### 2013-02
+### 2013-02-16
+
+Brought in Bower, D3, Bootstrap.  Testing out a few visualizations.
+
+### 2013-02-13
 
 My game plan is to stub out the data, then take a peek at what the data
 contract(s) should be. Also, here be dragons. I'm learning Flask. I swear I'll
