@@ -13,7 +13,12 @@ from utilities.converters import RegexConverter
 PROJECT_ROOT = os.path.normpath(os.path.realpath(os.path.dirname(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
-app = Flask(__name__)
+TMPL_DIR = os.path.join(os.path.normpath(os.path.realpath(os.path.dirname(__file__))), 'www', 'templates')
+STATIC_DIR = os.path.join(os.path.normpath(os.path.realpath(os.path.dirname(__file__))), 'www', 'static')
+
+app = Flask(__name__, 
+            template_folder=TMPL_DIR,
+            static_folder=STATIC_DIR)
 app.url_map.converters['regex'] = RegexConverter
 
 @app.errorhandler(404)
@@ -29,12 +34,12 @@ def not_found(error=None):
     return resp
 
 
-from api import population
+from www import population
 app.register_blueprint(population.app)
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 8000))
+    port = int(os.environ.get('PORT', 8080))
 
     app.run(use_debugger=True, debug=True,
             use_reloader=True, host='0.0.0.0', port=port)
